@@ -285,7 +285,7 @@ data[['emp_length', 'earliest_cr_yr', 'yr_since_last_inq']].describe()
 
 Ini terjadi karena pd.to_datetime menggunakan 'unix' (epoch) sebagai asal atau tahun 1970, sehingga tidak ada tanggal sebelum 1970, dan tanggal sebelum 1970, misalnya 1969, 1968, diubah menjadi 2068, 2067, dll.
 
-Karena saya masih pemula python & pandas baru-baru ini, saya masih belum tahu bagaimana menyesuaikan parameter tersebut, jadi saya akan menghapus data tersebut. Tapi jika Anda tahu caranya, saya pikir lebih baik tidak mengorbankan jenis data ini, karena semakin awal garis kredit, semakin stabil catatan kredit peminjam, karena mereka masih bisa meminjam sampai sekarang.
+Karena saya masih pemula python & pandas baru-baru ini, saya masih belum tahu bagaimana menyesuaikan parameter tersebut, jadi saya akan menghapus data tersebut. 
 
 
 
@@ -422,7 +422,7 @@ cat_data.nunique()
 
 """
 1.   Untuk 'term', kita akan menghapus "bulan" dan secara otomatis akan menjadi variabel numerik
-2.   Untuk 'grade', kita akan menggunakan encoder ordinal... atau hanya menggunakan peta lol.
+2.   Untuk 'grade', kita akan menggunakan encoder ordinal
 3. *   home_ownership
    *   verification status
    *   purpose
@@ -501,7 +501,7 @@ Presisi 'baik' yang lebih tinggi berarti kita berinvestasi dalam pinjaman berisi
 Presisi 'berisiko' yang lebih tinggi berarti kita menghindari pinjaman berisiko lebih banyak (menghindari pinjaman berisiko > menghindari pinjaman baik).
 Recall 'baik' x% berarti kita berinvestasi dalam x% pinjaman baik yang tersedia (investasi pinjaman baik > menghindari pinjaman baik).
 Recall 'berisiko' x% berarti kita menghindari x% dari pinjaman berisiko yang tersedia (menghindari pinjaman berisiko > investasi pinjaman berisiko).
-Akurasi tidak memberi kita informasi apa pun. Ketika kita menjalankan otak kera dan menerima semua pinjaman yang tersedia, akurasinya 78% lol.
+Akurasi tidak memberi kita informasi apa pun. Ketika kita menjalankan otak kera dan menerima semua pinjaman yang tersedia, akurasinya 78%.
 
 Evaluator yang harus diprioritaskan tergantung pada preferensi Anda. Dalam kasus saya:
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #6495ed;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #6495ed;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 20px; /* Jarak horizontal antara tombol */
+            margin-bottom: 20px; /* Jarak vertikal antara tombol */
+        }
+        a:hover {
+            background-color: #82CAFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <div class="result">{{ prediction_text }}</div>
+        <a href="/predict">Predict Again</a>
+        <a href="/">Home</a> <!-- Link untuk kembali ke halaman splash -->
+    </div>
+</body>
+</html>

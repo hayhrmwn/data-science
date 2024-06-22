@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Prediction Model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #6495ed;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="text"], input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #4682b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #82CAFF;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Prediction Model</h1>
+        <form action="/predict" method="post">
+            <label for="earliest_cr_yr">Earliest Credit Year:</label>
+            <input type="number" id="earliest_cr_yr" name="earliest_cr_yr" required>
+            
+            <label for="installment">Installment:</label>
+            <input type="number" id="installment" name="installment" required>
+            
+            <label for="loan_amnt">Loan Amount:</label>
+            <input type="number" id="loan_amnt" name="loan_amnt" required>
+            
+            <label for="emp_length">Employment Length (years):</label>
+            <input type="number" id="emp_length" name="emp_length" required>
+            
+            <input type="submit" value="Predict">
+        </form>
+        {% if prediction_text %}
+            <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
